@@ -245,7 +245,16 @@
     }
     .permission-hint.active { color: #f59e0b; }
 
-    .mockup-bar .spacer { flex: 1; }
+    .mockup-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-left: auto;
+    }
+    .mockup-bar-right .switcher-menu {
+      left: auto;
+      right: 0;
+    }
     .mockup-user {
       width: 32px; height: 32px; border-radius: 50%;
       background: linear-gradient(135deg, var(--blue), var(--purple));
@@ -825,20 +834,21 @@
     <div class="mockup-frame" id="mockupFrame" style="--accent: var(--p-ops); --accent-glow: rgba(20, 184, 166, .25);">
       <div class="mockup-bar">
         <div class="mockup-logo"><span class="blue">蓝鲸</span> Lanjing</div>
-        <div class="mockup-pf-switcher" id="pfSwitcher">
-          <span class="dot"></span>
-          <span id="pfName">运营平台</span>
-          <span class="arrow">&#9662;</span>
-          <div class="switcher-menu" id="pfMenu"></div>
+        <div class="mockup-bar-right">
+          <div class="mockup-pf-switcher" id="pfSwitcher">
+            <span class="dot"></span>
+            <span id="pfName">运营平台</span>
+            <span class="arrow">&#9662;</span>
+            <div class="switcher-menu" id="pfMenu"></div>
+          </div>
+          <div class="mockup-sys-switcher" id="sysSwitcher">
+            <span class="dot"></span>
+            <span id="sysName">广告</span>
+            <span class="arrow">&#9662;</span>
+            <div class="switcher-menu" id="sysMenu"></div>
+          </div>
+          <div class="mockup-user" id="userInitial">A</div>
         </div>
-        <div class="mockup-sys-switcher" id="sysSwitcher">
-          <span class="dot"></span>
-          <span id="sysName">广告</span>
-          <span class="arrow">&#9662;</span>
-          <div class="switcher-menu" id="sysMenu"></div>
-        </div>
-        <div class="spacer"></div>
-        <div class="mockup-user" id="userInitial">A</div>
       </div>
       <div class="mockup-body">
         <aside class="mockup-side" id="sideMenu">
@@ -876,8 +886,8 @@
       <div style="font-size: 14px; font-weight: 800; margin-bottom: 10px;">多权限角色策略（登录直达 + 顶栏可切换）</div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
         <div class="url-example"><b>默认落地</b>：按 `primaryPlatform + primarySystem` 直达；如未配置则走 `/home`。</div>
-        <div class="url-example"><b>平台切换</b>：左切换器展示 `visiblePlatforms`，可在已授权平台间自由切换。</div>
-        <div class="url-example"><b>子系统切换</b>：右切换器展示当前平台的 `visibleSystems[platform]`。</div>
+        <div class="url-example"><b>平台切换</b>：顶栏右侧第一个下拉展示 `visiblePlatforms`，可在已授权平台间自由切换。</div>
+        <div class="url-example"><b>子系统切换</b>：顶栏右侧第二个下拉展示当前平台的 `visibleSystems[platform]`。</div>
         <div class="url-example"><b>权限边界</b>：未授权平台/子系统不展示或灰显，后端 `scope` 强校验。</div>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
