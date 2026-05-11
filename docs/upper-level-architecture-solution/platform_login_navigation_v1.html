@@ -38,7 +38,9 @@
       --p-prj: #f97316;
       --p-ai: #a855f7;
       --p-ops: #14b8a6;
-      --p-scm: #22c55e;
+      --p-dlv: #22c55e;
+      --p-qal: #059669;
+      --p-usr: #0ea5e9;
       --p-sup: #64748b;
     }
 
@@ -114,7 +116,7 @@
 
     /* ========== 6-Platform Matrix ========== */
     .platform-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
     }
     .platform-card {
       position: relative;
@@ -130,7 +132,9 @@
     .platform-card.prj { --accent: var(--p-prj); --accent-glow: rgba(249, 115, 22, .25); }
     .platform-card.ai { --accent: var(--p-ai); --accent-glow: rgba(168, 85, 247, .25); }
     .platform-card.ops { --accent: var(--p-ops); --accent-glow: rgba(20, 184, 166, .25); }
-    .platform-card.scm { --accent: var(--p-scm); --accent-glow: rgba(34, 197, 94, .25); }
+    .platform-card.dlv { --accent: var(--p-dlv); --accent-glow: rgba(34, 197, 94, .25); }
+    .platform-card.qal { --accent: var(--p-qal); --accent-glow: rgba(5, 150, 105, .28); }
+    .platform-card.usr { --accent: var(--p-usr); --accent-glow: rgba(14, 165, 233, .25); }
     .platform-card.sup { --accent: var(--p-sup); --accent-glow: rgba(100, 116, 139, .25); }
 
     .pf-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
@@ -671,11 +675,11 @@
   <header class="page-header">
     <div class="badge">Platform Architecture · v1.0 · Proposed</div>
     <h1>蓝鲸 · 平台登录与导航交互方案</h1>
-    <p class="sub">把 18 项扁平菜单收敛为 6 个独立平台入口，登录后按角色直达"主平台 / 主子系统"，URL 三段式承载权限、埋点与深链。</p>
+    <p class="sub">把 18 项扁平菜单收敛为 8 个独立平台入口，登录后按角色直达"主平台 / 主子系统"，URL 三段式承载权限、埋点与深链。</p>
     <div class="meta">
       <span>v1.0 · 2026-05-09</span>
       <span>状态：Proposed</span>
-      <span>6 平台 / 17+ 子系统</span>
+      <span>8 平台 / 20+ 子系统</span>
     </div>
   </header>
 
@@ -689,18 +693,18 @@
     <div class="hero-arrow">&#8594;</div>
     <div class="hero-side tgt">
       <div class="label">目标</div>
-      <div class="num">6</div>
+      <div class="num">8</div>
       <div class="desc">独立平台入口，每个平台心智清晰<br/>子系统作为平台内二级</div>
     </div>
   </div>
 
-  <!-- ============== Section 1: 6 Platform Matrix ============== -->
+  <!-- ============== Section 1: 8 Platform Matrix ============== -->
   <section>
     <div class="sec-header">
       <div class="sec-num">1</div>
       <div>
-        <div class="sec-title">6 个独立平台入口</div>
-        <div class="sec-desc">按"用户日常打开哪个就能干完自己活"的视角划分；URL 前缀承载权限与埋点。</div>
+        <div class="sec-title">8 个独立平台入口</div>
+        <div class="sec-desc">按"用户日常打开哪个就能干完自己活"的视角划分；URL 前缀承载权限与埋点。（供应链 → 交付；质量独立；客服与用户独立为用户平台）</div>
       </div>
     </div>
 
@@ -769,26 +773,58 @@
           <span class="pf-system">商超</span>
           <span class="pf-system">分销</span>
           <span class="pf-system">广告（含站外）</span>
-          <span class="pf-system">客服</span>
-          <span class="pf-system">用户</span>
         </div>
-        <div class="pf-meta">主用户：销售 / 投手 / 客服 / KA / 决策方…</div>
+        <div class="pf-meta">主用户：销售 / 投手 / KA / 决策方…（客服与用户见「用户平台」）</div>
       </div>
 
-      <div class="platform-card scm">
+      <div class="platform-card usr">
         <div class="pf-head">
-          <div class="pf-icon">SC</div>
-          <div class="pf-name">供应链平台</div>
-          <div class="pf-url">/scm</div>
+          <div class="pf-icon">US</div>
+          <div class="pf-name">用户平台</div>
+          <div class="pf-url">/user</div>
         </div>
-        <div class="pf-tag">货从哪来 · 怎么到</div>
+        <div class="pf-tag">面向客户与终端用户 · 体验与关系</div>
+        <div class="pf-systems">
+          <span class="pf-system">客服</span>
+          <span class="pf-system">用户运营</span>
+          <span class="pf-system">工单与 RMA</span>
+          <span class="pf-system">会员与权益</span>
+          <span class="pf-system">用户洞察</span>
+        </div>
+        <div class="pf-meta">主用户：客服 / 用户运营 / 会员运营 / 体验设计</div>
+      </div>
+
+      <div class="platform-card dlv">
+        <div class="pf-head">
+          <div class="pf-icon">DL</div>
+          <div class="pf-name">交付平台</div>
+          <div class="pf-url">/delivery</div>
+        </div>
+        <div class="pf-tag">货从哪来 · 怎么到（原「供应链」收敛为交付域）</div>
         <div class="pf-systems">
           <span class="pf-system">采购</span>
           <span class="pf-system">生产</span>
-          <span class="pf-system">物流（含交付）</span>
-          <span class="pf-system">质量</span>
+          <span class="pf-system">物流与履约</span>
+          <span class="pf-system">仓储</span>
         </div>
-        <div class="pf-meta">主用户：计划 / 采购 / 仓储 / QA</div>
+        <div class="pf-meta">主用户：计划 / 采购 / 仓储 / 物流</div>
+      </div>
+
+      <div class="platform-card qal">
+        <div class="pf-head">
+          <div class="pf-icon">QA</div>
+          <div class="pf-name">质量平台</div>
+          <div class="pf-url">/quality</div>
+        </div>
+        <div class="pf-tag">质量事实与准入准出 · 独立平台便于横向拉通</div>
+        <div class="pf-systems">
+          <span class="pf-system">来料与过程</span>
+          <span class="pf-system">成品放行</span>
+          <span class="pf-system">供应商质量</span>
+          <span class="pf-system">体系与计量</span>
+          <span class="pf-system">质量分析</span>
+        </div>
+        <div class="pf-meta">主用户：QA / 质量工程 / 体系 / 实验室</div>
       </div>
 
       <div class="platform-card sup">
@@ -797,7 +833,7 @@
           <div class="pf-name">支持平台</div>
           <div class="pf-url">/support</div>
         </div>
-        <div class="pf-tag">让前 5 个平台合规跑起来的后台职能</div>
+        <div class="pf-tag">让各业务平台合规跑起来的后台职能</div>
         <div class="pf-systems">
           <span class="pf-system">财务</span>
           <span class="pf-system">认证</span>
@@ -891,8 +927,8 @@
         <div class="url-example"><b>权限边界</b>：未授权平台/子系统不展示或灰显，后端 `scope` 强校验。</div>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
-        <div class="url-example"><b>高级管理员示例</b>：默认 `/support/users/dashboard`，可切换 `ops/scm/ai/project/cognition`。</div>
-        <div class="url-example"><b>CTO 示例</b>：默认 `/ops/omnichannel/cockpit/overview`，可切换 `project/ai/support` 下已授权子系统。</div>
+        <div class="url-example"><b>高级管理员示例</b>：默认 `/support/users/dashboard`，可切换 `ops/delivery/quality/user/ai/project/cognition`。</div>
+        <div class="url-example"><b>CTO 示例</b>：默认 `/ops/omnichannel/cockpit/overview`，可切换 `user/delivery/quality/project/ai/support` 下已授权子系统。</div>
       </div>
     </div>
   </section>
@@ -986,8 +1022,10 @@
       <div class="url-examples">
         <div class="url-example"><b>/ops/ads/dashboard</b> · 广告整体看板</div>
         <div class="url-example"><b>/ops/sales/orders/:orderId</b> · 订单详情</div>
-        <div class="url-example"><b>/scm/procurement/pos/:poId</b> · 采购单详情</div>
-        <div class="url-example"><b>/scm/logistics/shipments</b> · 物流发运</div>
+        <div class="url-example"><b>/delivery/procurement/pos/:poId</b> · 采购单详情（交付平台）</div>
+        <div class="url-example"><b>/delivery/logistics/shipments</b> · 物流发运</div>
+        <div class="url-example"><b>/quality/iqc/batches/:id</b> · 来料检验批次</div>
+        <div class="url-example"><b>/user/customer-service/tickets/:id</b> · 客服工单详情</div>
         <div class="url-example"><b>/support/finance/vouchers/:id</b> · 凭证详情</div>
         <div class="url-example"><b>/support/contract/templates</b> · 合同模板</div>
         <div class="url-example"><b>/project/pct/projects/:id</b> · PCT 项目</div>
@@ -999,7 +1037,7 @@
         <div class="url-example"><b>/home</b> · 个人工作台（多平台用户兜底）</div>
       </div>
       <p style="margin-top: 18px; font-size: 12px; color: var(--txt3); text-align: center;">
-        Scope 命名同步规则：<code style="font-family: var(--mono); color: var(--purple);">{platform}:{system}:{action}</code> · 例 <code style="font-family: var(--mono); color: var(--purple);">ops:ads:read</code> / <code style="font-family: var(--mono); color: var(--purple);">support:finance:close-period</code>
+        Scope 命名同步规则：<code style="font-family: var(--mono); color: var(--purple);">{platform}:{system}:{action}</code> · 例 <code style="font-family: var(--mono); color: var(--purple);">ops:ads:read</code> / <code style="font-family: var(--mono); color: var(--purple);">user:cs:ticket-reply</code> / <code style="font-family: var(--mono); color: var(--purple);">delivery:procurement:approve-po</code> / <code style="font-family: var(--mono); color: var(--purple);">quality:iqc:release</code> / <code style="font-family: var(--mono); color: var(--purple);">support:finance:close-period</code>
       </p>
     </div>
   </section>
@@ -1030,7 +1068,7 @@
         <div class="nature">谁的域，进谁的工作台</div>
         <div class="home">归属 → <strong>各子系统内部</strong></div>
         <div class="examples">
-          <span>调价 → ops/sales</span><span>广告调优 → ops/ads</span><span>客诉 → ops/customer-service</span><span>补货 → scm/procurement</span>
+          <span>调价 → ops/sales</span><span>广告调优 → ops/ads</span><span>客诉 → user/customer-service</span><span>补货 → delivery/procurement</span>
         </div>
       </div>
       <div class="ops-layer l3">
@@ -1060,7 +1098,7 @@
         <div class="id">D1</div>
         <h4>顶栏切换器形态</h4>
         <div class="choice">两级切换器：左"平台"、右"子系统"</div>
-        <div class="reason">替代当前 18 项扁平下拉；平台稳定 6 项，子系统按平台动态加载。</div>
+        <div class="reason">替代当前 18 项扁平下拉；平台稳定 8 项，子系统按平台动态加载。</div>
       </div>
       <div class="decision-card">
         <div class="id">D2</div>
@@ -1122,7 +1160,7 @@
         <h4>路由与门面收编</h4>
         <ul>
           <li>AppShell + platforms.config.ts</li>
-          <li>6 平台路由前缀 + 老路径 301</li>
+          <li>8 平台路由前缀 + 老路径 301（含 <code style="font-family:var(--mono);">/scm → /delivery</code> 等迁移）</li>
           <li>顶栏两级切换器替换</li>
           <li>站外广告降为 ops/ads tab</li>
         </ul>
@@ -1191,7 +1229,7 @@
     <div class="left">
       <span>v1.0</span>
       <span>2026-05-09</span>
-      <span>6 平台 · 17+ 子系统</span>
+      <span>8 平台 · 20+ 子系统</span>
     </div>
     <div>
       作者：<a href="https://github.com/beynawoo-code" target="_blank" rel="noopener">@beynawoo-code · GitHub</a>
@@ -1229,12 +1267,12 @@
         cs: {
           name: '客服 · Cathy',
           initial: 'C',
-          pfId: 'ops', pfName: '运营平台', pfColor: 'var(--p-ops)', pfGlow: 'rgba(20, 184, 166, .25)',
+          pfId: 'usr', pfName: '用户平台', pfColor: 'var(--p-usr)', pfGlow: 'rgba(14, 165, 233, .28)',
           sysName: '客服',
           sideTitle: '客服',
           sideItems: ['工单收件箱', '退换货 RMA', '差评预警', '坐席管理', '知识库'],
           activeIdx: 0,
-          breadPf: '运营平台', breadSys: '客服', breadMod: '工单收件箱',
+          breadPf: '用户平台', breadSys: '客服', breadMod: '工单收件箱',
           pageTitle: '工单收件箱',
           stats: [['待处理', '142'], ['SLA 达成', '92.4%'], ['今日新增', '67'], ['超时', '5']]
         },
@@ -1272,7 +1310,7 @@
           activeIdx: 2,
           breadPf: '支持平台', breadSys: '用户与权限', breadMod: '角色权限',
           pageTitle: '角色权限与平台授权矩阵',
-          stats: [['可访问平台', '6'], ['可管子系统', '28'], ['活跃角色', '67'], ['待审批申请', '11']]
+          stats: [['可访问平台', '8'], ['可管子系统', '32'], ['活跃角色', '67'], ['待审批申请', '11']]
         },
         cog: {
           name: '认知贡献者 · Coral',
@@ -1293,7 +1331,7 @@
         ads: {
           platforms: ['运营平台'],
           systemsByPlatform: {
-            '运营平台': ['广告', '销售', '自营', '商超', '分销', '客服', '用户', '全渠道（OC-GTM）']
+            '运营平台': ['广告', '销售', '自营', '商超', '分销', '全渠道（OC-GTM）']
           }
         },
         finance: {
@@ -1303,9 +1341,9 @@
           }
         },
         cs: {
-          platforms: ['运营平台'],
+          platforms: ['用户平台'],
           systemsByPlatform: {
-            '运营平台': ['客服', '用户', '销售']
+            '用户平台': ['客服', '用户运营', '工单与 RMA', '会员与权益', '用户洞察']
           }
         },
         gtm: {
@@ -1316,20 +1354,23 @@
           }
         },
         exec: {
-          platforms: ['运营平台', '项目平台', 'AI 平台', '支持平台'],
+          platforms: ['运营平台', '用户平台', '项目平台', 'AI 平台', '支持平台'],
           systemsByPlatform: {
-            '运营平台': ['全渠道（OC-GTM）', '销售', '广告', '客服'],
+            '运营平台': ['全渠道（OC-GTM）', '销售', '广告'],
+            '用户平台': ['客服', '用户运营', '用户洞察'],
             '项目平台': ['项目中心', 'Gate 评审'],
             'AI 平台': ['知言对话', 'AI 成长营', '智能预警', '工作流'],
             '支持平台': ['财务', '合同', '用户与权限']
           }
         },
         admin: {
-          platforms: ['支持平台', '运营平台', '供应链平台', 'AI 平台', '项目平台', '认知平台'],
+          platforms: ['支持平台', '运营平台', '用户平台', '交付平台', '质量平台', 'AI 平台', '项目平台', '认知平台'],
           systemsByPlatform: {
             '支持平台': ['用户与权限', '财务', '认证', '合同', '知识产权', '研发'],
-            '运营平台': ['全渠道（OC-GTM）', '销售', '自营', '商超', '分销', '广告', '客服', '用户'],
-            '供应链平台': ['采购', '生产', '物流（含交付）', '质量'],
+            '运营平台': ['全渠道（OC-GTM）', '销售', '自营', '商超', '分销', '广告'],
+            '用户平台': ['客服', '用户运营', '工单与 RMA', '会员与权益', '用户洞察'],
+            '交付平台': ['采购', '生产', '物流与履约', '仓储'],
+            '质量平台': ['来料与过程', '成品放行', '供应商质量', '体系与计量', '质量分析'],
             'AI 平台': ['知言对话', 'AI 成长营', '智能预警', '工作流', '知识库', 'Agent 配置'],
             '项目平台': ['立项中心', '项目工作台', 'Gate 评审', '项目模板库', '奖金输出'],
             '认知平台': ['认知 APP', '认知后台']
@@ -1363,13 +1404,15 @@
       const sysMenu = $('sysMenu');
       const permissionHint = $('permissionHint');
 
-      const ALL_PLATFORMS = ['认知平台', '项目平台', 'AI 平台', '运营平台', '供应链平台', '支持平台'];
+      const ALL_PLATFORMS = ['认知平台', '项目平台', 'AI 平台', '运营平台', '用户平台', '交付平台', '质量平台', '支持平台'];
       const ALL_SYSTEMS_BY_PLATFORM = {
         '认知平台': ['认知 APP', '认知后台'],
         '项目平台': ['立项中心', '项目工作台', '项目中心', 'Gate 评审', '项目模板库', '奖金输出'],
         'AI 平台': ['知言对话', 'AI 成长营', '智能预警', '工作流', '知识库', 'Agent 配置'],
-        '运营平台': ['全渠道（OC-GTM）', '销售', '自营', '商超', '分销', '广告', '广告（含站外）', '客服', '用户'],
-        '供应链平台': ['采购', '生产', '物流（含交付）', '质量'],
+        '运营平台': ['全渠道（OC-GTM）', '销售', '自营', '商超', '分销', '广告', '广告（含站外）'],
+        '用户平台': ['客服', '用户运营', '工单与 RMA', '会员与权益', '用户洞察'],
+        '交付平台': ['采购', '生产', '物流与履约', '仓储'],
+        '质量平台': ['来料与过程', '成品放行', '供应商质量', '体系与计量', '质量分析'],
         '支持平台': ['用户与权限', '财务', '认证', '合同', '知识产权', '研发']
       };
 
