@@ -777,23 +777,6 @@
         <div class="pf-meta">主用户：销售 / 投手 / KA / 决策方…</div>
       </div>
 
-      <div class="platform-card usr">
-        <div class="pf-head">
-          <div class="pf-icon">US</div>
-          <div class="pf-name">用户平台</div>
-          <div class="pf-url">/user</div>
-        </div>
-        <div class="pf-tag">面向客户与终端用户 · 体验与关系</div>
-        <div class="pf-systems">
-          <span class="pf-system">客服</span>
-          <span class="pf-system">用户运营</span>
-          <span class="pf-system">工单与 RMA</span>
-          <span class="pf-system">会员与权益</span>
-          <span class="pf-system">用户洞察</span>
-        </div>
-        <div class="pf-meta">主用户：客服 / 用户运营 / 会员运营 / 体验设计</div>
-      </div>
-
       <div class="platform-card dlv">
         <div class="pf-head">
           <div class="pf-icon">DL</div>
@@ -825,6 +808,23 @@
           <span class="pf-system">质量分析</span>
         </div>
         <div class="pf-meta">主用户：QA / 质量工程 / 体系 / 实验室</div>
+      </div>
+
+      <div class="platform-card usr">
+        <div class="pf-head">
+          <div class="pf-icon">US</div>
+          <div class="pf-name">用户平台</div>
+          <div class="pf-url">/user</div>
+        </div>
+        <div class="pf-tag">面向客户与终端用户 · 体验与关系</div>
+        <div class="pf-systems">
+          <span class="pf-system">客服</span>
+          <span class="pf-system">用户运营</span>
+          <span class="pf-system">工单与 RMA</span>
+          <span class="pf-system">会员与权益</span>
+          <span class="pf-system">用户洞察</span>
+        </div>
+        <div class="pf-meta">主用户：客服 / 用户运营 / 会员运营 / 体验设计</div>
       </div>
 
       <div class="platform-card sup">
@@ -1364,7 +1364,7 @@
           }
         },
         admin: {
-          platforms: ['支持平台', '运营平台', '用户平台', '交付平台', '质量平台', 'AI 平台', '项目平台', '认知平台'],
+          platforms: ['支持平台', '运营平台', '交付平台', '质量平台', '用户平台', 'AI 平台', '项目平台', '认知平台'],
           systemsByPlatform: {
             '支持平台': ['用户与权限', '财务', '认证', '合同', '知识产权', '研发'],
             '运营平台': ['全渠道（OC-GTM）', '销售', '自营', '商超', '分销', '广告'],
@@ -1404,7 +1404,7 @@
       const sysMenu = $('sysMenu');
       const permissionHint = $('permissionHint');
 
-      const ALL_PLATFORMS = ['认知平台', '项目平台', 'AI 平台', '运营平台', '用户平台', '交付平台', '质量平台', '支持平台'];
+      const ALL_PLATFORMS = ['认知平台', '项目平台', 'AI 平台', '运营平台', '交付平台', '质量平台', '用户平台', '支持平台'];
       const ALL_SYSTEMS_BY_PLATFORM = {
         '认知平台': ['认知 APP', '认知后台'],
         '项目平台': ['立项中心', '项目工作台', '项目中心', 'Gate 评审', '项目模板库', '奖金输出'],
